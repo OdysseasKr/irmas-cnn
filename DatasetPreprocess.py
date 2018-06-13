@@ -124,9 +124,9 @@ class DatasetPreprocessor:
 					index += 1
 				except (KeyboardInterrupt, SystemExit):
 					raise
-				#except:
-				#	print('err')
-				#	skipped += 1
+				except:
+					print('err')
+					skipped += 1
 			print("")
 
 			if skipped > 0:
@@ -232,8 +232,8 @@ class DatasetPreprocessor:
 
 			except (KeyboardInterrupt, SystemExit):
 				raise
-			#except:
-			#	skipped += 1
+			except:
+				skipped += 1
 		print("")
 
 		if skipped > 0:
@@ -294,5 +294,5 @@ if __name__ == '__main__':
 		print("Usage: python DatasetPreprocessor.py train_path test_path mode")
 		exit()
 	dp = DatasetPreprocessor(sys.argv[3])
-	#dp.generateTrain(sys.argv[1])
+	dp.generateTrain(sys.argv[1])
 	dp.generateTest(sys.argv[2])
