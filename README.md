@@ -47,9 +47,9 @@ dp.generateTrain('path/to/trainset/folder')
 dp.generateTest('path/to/testset/folder')
 ```
 
-Call
+Use
 ``` Python
 dp.normalizeGain('path/to/trainset/folder')
 ```
 
-to normalize the gain of all tracks to a specific dB value.
+to normalize the gain of all tracks in a folder, to a specific dB value.
