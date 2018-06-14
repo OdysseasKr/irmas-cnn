@@ -13,11 +13,11 @@ In this project, I have extracted different features from the audio signal, whic
 - VGG-16 [[paper] (https://arxiv.org/abs/1409.1556)]
 - A variation of the YOLO architecture [[paper] (https://arxiv.org/abs/1506.02640)]
 
-All of the models are implemented using the new higher level Tensorflow API.https://arxiv.org/abs/1409.1556
+All of the models are implemented using the new higher level Tensorflow API [[link](https://www.tensorflow.org/programmers_guide/#high_level_apis)].
 
 ### Using the DatasetPreprocessor
 
-The repository includes the DatasetPreprocessor class that extracts features from the raw files of the IRMAS dataset and stores them in easy to use .h5 files.
+The repository includes the DatasetPreprocessor class that extracts features from the raw files of the IRMAS dataset and stores them in easy to use .h5 files. All features are generated using Librosa [[link](https://librosa.github.io/)].
 
 Initialize the DatasetPreprocessor object like this:
 
@@ -53,4 +53,3 @@ dp.normalizeGain('path/to/trainset/folder')
 ```
 
 to normalize the gain of all tracks to a specific dB value.
-  
