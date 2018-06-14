@@ -10,10 +10,15 @@ The IRMAS dataset [[link](https://www.upf.edu/web/mtg/irmas)] is used for musica
 
 In this project, I have extracted different features from the audio signal, which were fed to a Convolutional Neural Network. The two networks included in the project:
 
-- VGG-16 [[paper] (https://arxiv.org/abs/1409.1556)]
-- A variation of the YOLO architecture [[paper] (https://arxiv.org/abs/1506.02640)]
+- VGG-16 [[paper](https://arxiv.org/abs/1409.1556)]
+- A variation of the YOLO architecture [[paper](https://arxiv.org/abs/1506.02640)]
 
 All of the models are implemented using the new higher level Tensorflow API [[link](https://www.tensorflow.org/programmers_guide/#high_level_apis)].
+
+There are Jupyter Notebooks for two experiments:
+
+- Using Mel-Frequency Cepstrum as feature with YOLO-like CNN [here](https://github.com/OdysseasKr/irmas-cnn/blob/master/Training%20with%20Mel-frequency.ipynb)
+- Using several handpicked features with a VGG-16 architecture [here](https://github.com/OdysseasKr/irmas-cnn/blob/master/Training%20with%20handpicked%20features%20and%20VGG-16.ipynb)
 
 ### Using the DatasetPreprocessor
 
