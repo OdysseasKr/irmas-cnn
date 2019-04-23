@@ -181,7 +181,7 @@ class DatasetPreprocessor:
 		elif self.mode == 'handpicked':
 			feature_x_size = 25
 		feature_y_size = 130
-		num_of_tracks = 3 * (len(os.listdir(data_path)) / 2)
+		num_of_tracks = 3 * int(len(os.listdir(data_path)) / 2)
 
 		data_matrix = np.empty((num_of_tracks, feature_x_size, feature_y_size), dtype=np.float32)
 		print(data_matrix.shape)
