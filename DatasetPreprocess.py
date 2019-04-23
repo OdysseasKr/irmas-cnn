@@ -95,7 +95,7 @@ class DatasetPreprocessor:
 		labels.sort()
 		total_tracks = self._countTrainTracks(data_path, labels)
 		data_matrix = np.empty((total_tracks, feature_x_size, feature_y_size))
-		data_labels = np.chararray((total_tracks, 1), itemsize=4)
+		data_labels = np.chararray((total_tracks, 1), itemsize=4, unicode=True)
 		index = 0
 
 		for l, label in enumerate(labels):
@@ -118,7 +118,7 @@ class DatasetPreprocessor:
 						data_matrix[index, 1] = librosa.feature.spectral_bandwidth(y, sr)
 						data_matrix[index, 2] = librosa.feature.spectral_rolloff(y, sr)
 						data_matrix[index, 3] = librosa.feature.zero_crossing_rate(y)
-						data_matrix[index, 4] = np.pad(librosa.feature.rmse(y)[0], 2, 'constant')
+						data_matrix[index, 4] = librosa.feature.rmse(y)[0]
 						data_matrix[index, 5:25] = librosa.feature.mfcc(y, sr, n_mfcc=20)
 					data_labels[index] = label
 					index += 1
@@ -132,7 +132,7 @@ class DatasetPreprocessor:
 			if skipped > 0:
 				print(" Skipped {} corrupted files".format(skipped))
 				data_matrix = data_matrix[:total_tracks-skipped]
-				data_labels = data_matrix[:total_tracks-skipped]
+				data_labels = data_labels[:total_tracks-skipped]
 
 		# Open dataset file
 		out_file = h5py.File(output_path, 'w')
